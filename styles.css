@@ -612,13 +612,13 @@ h4 {
 .comparison-video {
     border-radius: 12px;
     padding: 14px;
-    width: 68%;
+    width: 100%;
     max-width: 560px;
     margin: 0 auto;
 }
 
 .comparison-media {
-    width: 90% !important;
+    width: 100% !important;
     max-width: 420px;
     display: block;
     margin: 0 auto;
