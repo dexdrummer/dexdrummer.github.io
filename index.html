@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DexDrummer: In-Hand, Contact-Rich, and Long-Horizon Dexterous Robot Drumming</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts - Nunito as Avenir Next alternative -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Add this for better Avenir Next support if you have the license -->
+    <link rel="stylesheet" href="https://use.typekit.net/your-project-id.css">
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+    <!-- VSCode Syntax Highlighting -->
+    <link href="vscode-light-style.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="static/images/drumsticks.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/python.min.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header-section" id="overview">
+        <div class="container">
+            <div class="row">
+                <div class="mx-auto text-center">
+                    <h1 class="paper-title">DexDrummer: In-Hand, Contact-Rich, and Long-Horizon Dexterous Robot Drumming</h1>
+                    <div class="author-line text-center mb-2">
+                        <span><a href="https://hc-fang.github.io/" class="text-light author-link">Hung-Chieh&nbsp;Fang,<sup></sup></a></span>
+                        <!-- <span class="mx-2 text-light">•</span> -->
+                        <span><a href="https://amberxie88.github.io/" class="text-light author-link">Amber&nbsp;Xie,<sup></sup></a></span>
+                        <!-- <span class="mx-2 text-light">•</span> -->
+                        <span><a href="https://jenngrannen.com/" class="text-light author-link">Jennifer&nbsp;Grannen,<sup></sup></a></span>
+                        <!-- <span class="mx-2 text-light">•</span> -->
+                        <span><a href="https://www.linkedin.com/in/kenneth-llontop/" class="text-light author-link">Kenneth&nbsp;Llontop,<sup></sup></a></span>
+                        <span><a href="https://dorsa.fyi/" class="text-light author-link">Dorsa&nbsp;Sadigh<sup></sup></a></span>
+
+                        
+                    </div>
+                    <!-- <div class="project-lead-line mt-2 mb-3 text-center">
+                        <span class="text-light"><sup>†</sup> Project Lead</span>
+                    </div> -->
+                    <!-- Institution Logos Section (Replace the text-based institution line) -->
+<!-- Institution Logos Section -->
+<div class="institution-logos text-center mb-3">
+    <!-- <span class="institution-logo-wrapper"> -->
+        <!-- <img src="webpage_assets/logos/meta.png" alt="FAIR, Meta" class="institution-logo" title="FAIR, Meta"> -->
+        <!-- <sup>1</sup> -->
+        <span class="institution-line" style="margin-right: 1em;"><sup></sup>Stanford University</span>
+    <!-- </span> -->
+</div>
+
+                <!-- <div class="mt-2 mb-3 text-center">
+                    <span class="text-light">ICCV 2025</span>
+                </div> -->
+
+                    <div class="mt-4">
+                        <a href="https://arxiv.org/abs/2603.12243" class="btn btn-light me-2" style="box-shadow: 0 4px 8px rgba(0,0,0,0.1);"><i class="fas fa-file-alt me-2" style="color: var(--primary-color);"></i>Paper</a>
+                        <a href="https://github.com/hc-fang/dexdrummer" class="btn btn-light me-2" style="box-shadow: 0 4px 8px rgba(0,0,0,0.1);"><i class="fab fa-github me-2" style="color: var(--primary-color);"></i>Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- <section id="teaser">
+            <div class="col-12 mb-3 text-center">
+                <img src="static/images/FedUni_teaser.jpg" alt="Dimensional collapse in extreme UniDA scenarios" class="img-fluid mx-auto d-block" style="max-width: 50%; height: auto;">
+            </div>
+            <div class="figure-caption">
+                <em>
+                    By softly separating client representations, SSD encourages them to spread toward different directions, thereby improving global uniformity while preserving local representation expressiveness.
+                </em>
+            </div> 
+        </section> -->
+
+        <section id="abstract">
+            <h2 class="section-title">Abstract</h2>
+                <p>
+                    Performing in-hand, contact-rich, and long-horizon dexterous manipulation remains an unsolved challenge in robotics. Prior hand dexterity works have considered each of these three challenges in isolation, yet do not combine these skills into a single, complex task. 
+                    To further test the capabilities of dexterity, we propose drumming as a testbed for dexterous manipulation. Drumming naturally integrates all three challenges: it involves in-hand control for stabilizing and adjusting the drumstick with the fingers, contact-rich interaction through repeated striking of the drum surface, and long-horizon coordination when switching between drums and sustaining rhythmic play. We present <span class="dexdrummer">DexDrummer</span>, a hierarchical object-centric bimanual drumming policy trained in simulation with sim-to-real transfer. The framework reduces the exploration difficulty of pure reinforcement learning by combining trajectory planning with residual RL corrections for fast transitions between drums. A dexterous manipulation policy handles contact-rich dynamics, guided by rewards that explicitly model both finger–stick and stick–drum interactions.
+                    In simulation, we show our policy can play two styles of music: multi-drum, bimanual songs and challenging, technical exercises that require increased dexterity. Across simulated bimanual tasks, our dexterous, reactive policy outperforms a fixed grasp policy by 1.87x across easy songs and 1.22x across hard songs F1 scores. In real-world tasks, we show song performance across a multi-drum setup.  <span class="dexdrummer">DexDrummer</span> is able to play our training song and its extended version with an F1 score of 1.0.
+                </p>
+        </section>
+
+        <!-- Video Section --> 
+        <!-- <section id="video">
+            <h2 class="section-title">Video</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/bR6_Cq5t7xw?si=gRL4UHImpl6FWQpa" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        
+        <!-- Motivation Section -->
+        <!-- <section id="motivation">
+            <h2 class="section-title">Motivation</h2>
+            <div class="row figure-container my-4">
+                <h4>Uniformity in Representation Learning</h4>
+                <p>
+                    Uniformity is a critical metric in representation learning (<a href="https://arxiv.org/abs/2005.10242" target="_blank">Wang et al., 2020</a>, <a href="https://arxiv.org/abs/2403.00642" target="_blank">Fang et al., 2024</a>), where higher uniformity indicates better preservation of information in the learned representations. In <i>centralized</i> training, jointly optimizing alignment loss, which encourages closeness of similar samples, and uniformity loss, which maximizes preserved information, yields high-quality representations.
+                </p>
+                <div class="col-12 mb-4">
+                    <div class="equation-container" style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid var(--primary-color);">
+                        $$
+                        \mathcal{L}_{\text{align}} = \mathbb{E}_{\mathbf{x}\sim p(\mathbf{x}), \tilde{\mathbf{x}},\tilde{\mathbf{x}}^+ \sim \mathcal{T}(\mathbf{x})} ||\mathbf{z} - \mathbf{z}^+||^2_2, \quad \mathcal{L}_{\text{uniform}} = - \log \mathbb{E}_{\mathbf{z}_i, \mathbf{z}_j \overset{\text{i.i.d}}{\sim} p(\mathbf{z})}\bigl[e^{-t ||\mathbf{z}_i - \mathbf{z}_j||^2_2}\bigr] 
+                        $$
+                    </div>
+                </div>
+                <hr>
+                <h4>Challenges in Achieving Global Uniformity under Non-IID Data</h4>
+                <p>
+                    In <i>decentralized</i> training with <b>non-IID data</b>, however, achieving global uniformity is challenging.
+                </p>
+                <div class="col-12 mb-4">
+                    <div class="equation-container" style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid var(--primary-color);">
+                        $$
+                        \mathcal{L}_{\text{uniform}}
+                            = - \log \biggl( \underbrace{\sum_{k=1}^K \mathbb{E}_{\mathbf{z}, \mathbf{z}' \overset{\text{i.i.d}}\sim p_k(\mathbf{z})} [e^{-t {||\mathbf{z} - \mathbf{z}'||^2_2}}] }_{\text{intra-client }  \mathcal{L}_{\text{uniform}}^k} \\ + \underbrace{\sum_{i\neq j} \mathbb{E}_{\mathbf{z} \sim p_i(\mathbf{z}), \mathbf{z}'\sim p_j(\mathbf{z})}[e^{-t {||\mathbf{z} - \mathbf{z}'||^2_2}}]}_{\text{inter-client }\mathcal{L}_{\text{uniform}}^{(i, j)}}  \biggr)
+                        $$
+                    </div>
+                </div>
+                <p>
+                    In this setting, each client $i$ optimizes its local loss function using samples from its own data distribution $p_i$. In homogeneous settings, where client distributions are similar (i.e., $p_i \approx p_j$), optimizing intra-client uniformity naturally promotes good inter-client uniformity. However, in non-IID settings, where client distributions differ significantly, optimizing only intra-client uniformity fails to ensure good inter-client uniformity, leading to suboptimal global representation quality.
+                </p>
+            </div>
+        </section> -->
+
+        <!-- Method Section -->
+        <section id="method">
+            <h2 class="section-title">Method</h2>
+            <div class="row figure-container my-4">
+                <div class="col-12 mb-3 text-center">
+                    <img src="static/images/overview.png" alt="Dimensional collapse in extreme UniDA scenarios" class="img-fluid mx-auto d-block" style="max-width: 80%; height: auto;">
+                </div>
+                <!-- <hr> -->
+                <!-- <h4>Dimensional-Scaled Regularization</h4> -->
+                <p> 
+                </p>
+            </div>
+        </section>
+
+
+        <!-- Analysis Section -->
+        <section id="analysis">
+            <h2 class="section-title">Analysis</h2>
+            
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h4>Finger-driven vs. Arm-driven</h4>
+                    <!-- <p>Side-by-side comparison between finger-driven and arm-driven motion.</p> -->
+                </div>
+            </div>
+
+            <div class="row g-4 mb-5 justify-content-center">
+                <div class="col-12 col-lg-6">
+                    <h5 class="text-center mb-3">Finger-driven</h5>
+                    <video class="w-100 rounded shadow-sm" controls playsinline preload="metadata">
+                        <source src="static/videos/dex_10_closed.MOV">
+                        Your browser cannot play this MOV file. <a href="static/videos/dex_10_closed.MOV" target="_blank" rel="noopener noreferrer">Download video</a>.
+                    </video>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h5 class="text-center mb-3">Arm-driven</h5>
+                    <video class="w-100 rounded shadow-sm" controls playsinline preload="metadata">
+                        <source src="static/videos/dex_10_arm.MOV">
+                        Your browser cannot play this MOV file. <a href="static/videos/dex_10_arm.MOV" target="_blank" rel="noopener noreferrer">Download video</a>.
+                    </video>
+                </div>
+            </div>
+
+
+        <!-- Evaluation Section -->
+        <!-- <section id="evaluation">
+            <h2 class="section-title">Address Dimensional Collapse without Labels</h2>
+            <div class="col-lg-12">
+                <h4>De-collapse Techniques from Self-Supervised Learning</h4>
+                <p>Dimensional collapse is a well-known issue in self-supervised learning, primarily caused by the contrastive alignment term (<a href="https://arxiv.org/abs/2110.09348" target="_blank">Li et al., 2020</a>). Various methods have been developed to address this problem, including contrastive learning approaches (e.g., AlignUniform, SimCLR), asymmetric models (e.g., SimSiam, BYOL), and redundancy reduction techniques (e.g., VICReg, Barlow Twins). Here, we show how the uniformity term from self-supervised learning can effectively prevent DC in UniDA. We further show that these SSL approaches also work in the paper.</p>
+                
+                <div class="row figure-container my-4">
+                    <div class="col-12 mb-3">
+                        <img src="static/images/uniformity.png" alt="DC" class="img-fluid">
+                    </div>
+                    <div class="figure-caption">
+                        <em>
+                            The alignment term alone worsens the dimensional collapse, while the uniformity term effectively prevents it. Combining both terms achieves the best performance.
+                        </em>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <img src="static/images/result.png" alt="DC" class="img-fluid">
+                    </div>
+                    <div class="figure-caption">
+                        <em>
+                            Adding SSL consistently improves PDM performance across the whole spectrum, and substantially outperforms baselines in extreme UniDA scenarios where DC is severe.
+                        </em>
+                    </div>
+                </div>
+            </div>
+        </section>                     -->
+                        
+
+            
+
+
+<!-- Citations Section -->
+<section id="citations" class="citation-section">
+    <h2 class="section-title">BibTeX</h2>
+            <div class="code-container position-relative" style="margin: 20px 0;">
+                <button id="copy-citation-btn" class="btn btn-sm" onclick="copyCitation()" style="position: absolute; top: 10px; right: 10px; z-index: 10;">
+                    <i class="fas fa-copy"></i> Copy
+                </button>
+                <pre id="code-block-citation" style="padding: 20px; padding-top: 50px; margin: 0; overflow-x: auto;"><code class="plaintext">@misc{fang2026dexdrummer,
+      title={DexDrummer: In-Hand, Contact-Rich, and Long-Horizon Dexterous Robot Drumming}, 
+      author={Hung-Chieh Fang and Amber Xie and Jennifer Grannen and Kenneth Llontop and Dorsa Sadigh},
+      year={2026},
+      eprint={},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={}, 
+}</code></pre>
+
+    </div>
+</section>
+
+    </main>
+    <footer class="text-center py-3 mt-5" style="border-top: 1px solid #eee; color: #666; font-size: 0.9em;">
+        <div class="container">
+            <p class="mb-0">Template modified from <a href="https://jiachenzhu.github.io/DyT/" target="_blank" style="color: #666;">https://jiachenzhu.github.io/DyT/</a></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap and JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js" async></script>
+    <!-- Custom JS -->
+    <script src="scripts.js"></script>
+</body>
+</html>
