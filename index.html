@@ -162,10 +162,90 @@
                 <div class="col-12 mb-3 text-center">
                     <img src="static/images/overview.png" alt="Dimensional collapse in extreme UniDA scenarios" class="img-fluid mx-auto d-block" style="max-width: 80%; height: auto;">
                 </div>
-                <!-- <hr> -->
-                <!-- <h4>Dimensional-Scaled Regularization</h4> -->
-                <p> 
-                </p>
+                <div class="col-12">
+                    <h4 class="mb-3">System Overview</h4>
+                    <p class="text-center mb-3">
+                        <span class="dexdrummer">DexDrummer</span> is a hierarchical, object-centric bimanual drumming policy.
+                    </p>
+                    <ul>
+                        <!-- <li><strong>Framework:</strong> <span class="dexdrummer">DexDrummer</span> is a hierarchical, object-centric bimanual drumming policy for simulation and real-world transfer.</li> -->
+                        <li><strong>High-level policy:</strong> Plans drumstick-centered task-space trajectories from target drum sequences, maps them to end-effector motions, and applies residual RL for fast transition correction.</li>
+                        <li><strong>Low-level policy:</strong> Produces dexterous finger control for stable in-hand stick manipulation under dynamic impacts and precise strikes.</li>
+                        <li><strong>Rewards:</strong>
+                            <ul>
+                                <li><em>In-hand contact:</em> fingertip/fulcrum grasp rewards with arm and energy regularization to encourage finger-driven control.</li>
+                                <li><em>External contact:</em> trajectory shaping + contact curriculum + reactive grasp for robust stick-drum interaction.</li>
+                                <li><em>Task:</em> sparse hit-timing reward for successful drum strikes.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </section>
+
+        <section id="real-world-drumming">
+            <h2 class="section-title">Real-world Drumming Video</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-12 col-lg-6">
+                    <div class="real-world-card">
+                        <h3 class="real-world-song-title">Everlong</h3>
+
+                        <div class="audio-block">
+                            <p class="audio-label">Original Song Audio</p>
+                            <audio controls preload="metadata" class="w-100">
+                                <!-- <source src="static/videos/everlong.wav" type="audio/wav"> -->
+                                <source src="static/videos/everlong_new.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+
+                        <div class="audio-block">
+                            <p class="audio-label">Drum-only Audio</p>
+                            <audio controls preload="metadata" class="w-100">
+                                <source src="static/videos/everlong_drum_only.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+
+                        <div class="video-block">
+                            <video class="w-100 rounded shadow-sm" controls playsinline preload="metadata">
+                                <source src="static/videos/everlong.MOV">
+                                Your browser cannot play this MOV file. <a href="static/videos/everlong.MOV" target="_blank" rel="noopener noreferrer">Download video</a>.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="real-world-card">
+                        <h3 class="real-world-song-title">Seven Nation Army</h3>
+
+                        <div class="audio-block">
+                            <p class="audio-label">Original Song Audio</p>
+                            <audio controls preload="metadata" class="w-100">
+                                <source src="static/videos/sna.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+
+                        <div class="audio-block">
+                            <p class="audio-label">Drum-only Audio</p>
+                            <audio controls preload="metadata" class="w-100">
+                                <source src="static/videos/sna_drum_only.wav" type="audio/wav">
+                                <!-- <source src="static/videos/sna_drum_only.mp3" type="audio/mpeg"> -->
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+
+                        <div class="video-block">
+                            <video class="w-100 rounded shadow-sm" controls playsinline preload="metadata">
+                                <source src="static/videos/seven_nation_army.MOV">
+                                Your browser cannot play this MOV file. <a href="static/videos/seven_nation_army.MOV" target="_blank" rel="noopener noreferrer">Download video</a>.
+                            </video>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -232,10 +312,9 @@
                 </div>
             </div>
 
+        </section>
 
-
-
-
+        
         <!-- Evaluation Section -->
         <!-- <section id="evaluation">
             <h2 class="section-title">Address Dimensional Collapse without Labels</h2>

@@ -112,7 +112,7 @@ body {
     font-size: 18px;
 }
 
-#abstract .dexdrummer {
+.dexdrummer {
     color: #8B0000;
     font-weight: 700;
 }
@@ -435,7 +435,7 @@ h1, h2, h3, h5, h6 {
 /* Base font size - set on root element using rem */
 :root {
     --base-font-size: 16px;
-    --scale-factor: 1;
+    --scale-factor: 0.8;
 }
 
 /* Set the base size */
@@ -463,7 +463,7 @@ body {
 }
 
 .author-line {
-    font-size: calc(1.5rem * var(--scale-factor));
+    font-size: calc(1.7rem * var(--scale-factor));
     font-weight: 600;
     margin: 0.625rem 0;
     line-height: 1.5;
@@ -654,6 +654,49 @@ h4 {
     font-size: 1.05rem;
     text-align: center;
     color: #333;
+}
+
+/* Real-world drumming section */
+.real-world-card {
+    border: 1px solid #e6e6e6;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    padding: 12px;
+    height: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+.real-world-song-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.audio-block {
+    margin-bottom: 10px;
+}
+
+.audio-label {
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #444;
+}
+
+.video-block {
+    margin-top: 8px;
+}
+
+#real-world-drumming audio {
+    width: 100%;
+    height: 34px;
+}
+
+#real-world-drumming video {
+    max-height: 260px;
+    object-fit: contain;
 }
 
 @media (max-width: 992px) {
