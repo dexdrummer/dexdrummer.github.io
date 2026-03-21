@@ -291,7 +291,7 @@
                         <source src="static/videos/dex_10_closed.MOV">
                         Your browser cannot play this MOV file. <a href="static/videos/dex_10_closed.MOV" target="_blank" rel="noopener noreferrer">Download video</a>.
                     </video>
-                    <p class="comparison-note mb-0">Policy trained with contact curriculum.</p>
+                    <p class="comparison-note mb-0">With contact curriculum, the policy unlocks finger dexterity and maintains in-hand exploration.</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3">
@@ -301,7 +301,7 @@
                         <source src="static/videos/dex_10_noclm.MOV">
                         Your browser cannot play this MOV file. <a href="static/videos/dex_10_noclm.MOV" target="_blank" rel="noopener noreferrer">Download video</a>.
                     </video>
-                    <p class="comparison-note mb-0">Policy trained without contact curriculum.</p>
+                    <p class="comparison-note mb-0">Without it, the stick rests on the drum head and limits finger exploration; subtle finger movements are easily canceled by external contact.</p>
                     </div>
                 </div>
             </div>
@@ -309,6 +309,45 @@
             <div class="row mb-5 justify-content-center">
                 <div class="col-12 text-center">
                     <img src="static/images/dex_all.png" alt="DexDrummer analysis summary" class="img-fluid mx-auto d-block" style="max-width: 80%; height: auto;">
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h3>Ablations for Arm Control</h3>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-5 justify-content-center">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="comparison-video highlight-video">
+                    <h5 class="text-center mb-3">Motion Planning + Residual RL</h5>
+                    <video class="w-100 rounded shadow-sm comparison-media" controls playsinline preload="metadata">
+                        <source src="static/videos/full.mp4" type="video/mp4">
+                        Your browser cannot play this MP4 file. <a href="static/videos/full.mp4" target="_blank" rel="noopener noreferrer">Download video</a>.
+                    </video>
+                    <p class="comparison-note mb-0">Our full method. F1 score: 1.0.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="comparison-video neutral-video">
+                    <h5 class="text-center mb-3">Without Residual RL</h5>
+                    <video class="w-100 rounded shadow-sm comparison-media" controls playsinline preload="metadata">
+                        <source src="static/videos/no_res.mp4" type="video/mp4">
+                        Your browser cannot play this MP4 file. <a href="static/videos/no_res.mp4" target="_blank" rel="noopener noreferrer">Download video</a>.
+                    </video>
+                    <p class="comparison-note mb-0">Motion planning only. F1 score: 0.8.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="comparison-video neutral-video">
+                    <h5 class="text-center mb-3">Without Residual RL + Motion Planning</h5>
+                    <video class="w-100 rounded shadow-sm comparison-media" controls playsinline preload="metadata">
+                        <source src="static/videos/no_res_mp.mp4" type="video/mp4">
+                        Your browser cannot play this MP4 file. <a href="static/videos/no_res_mp.mp4" target="_blank" rel="noopener noreferrer">Download video</a>.
+                    </video>
+                    <p class="comparison-note mb-0">RL from scratch. F1 score: 0.5.</p>
+                    </div>
                 </div>
             </div>
 
